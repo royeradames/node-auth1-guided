@@ -1,3 +1,4 @@
+const bcryptjs= require('bcryptjs') //add this line
 const router = require("express").Router();
 
 const Users = require("./users-model.js");
