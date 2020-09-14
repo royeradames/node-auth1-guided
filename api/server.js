@@ -31,7 +31,7 @@ server.get('/hash', (req, res) => {
   } else {
     res.status(401).json({ you: 'cannot pass!'})    
   }
-})
+}) 
 
 function hashString(str){
   // use bcryptjs to hash the str argument and return the hash
