@@ -3,14 +3,16 @@ const helmet = require('helmet')
 const cors = require('cors')
 
 const usersRouter = require('../users/users-router.js')
-
+const authRouter = require('../auth/auth-router')
 const server = express()
 
+// middleware
 server.use(helmet())
 server.use(express.json())
 server.use(cors())
 
 server.use('/api/users', usersRouter)
+server.use('/api/auth', authRouter)
 server.use((err, req, res, next) => {
   console.log(err.message)
   res.status(500).json({
